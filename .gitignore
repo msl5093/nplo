@@ -1,0 +1,12 @@
+# ignore bower_components
+bower_components
+
+# ignore node_modules
+node_modules
+npm-debug.log
+
+# ignore .DS_Store if any development on Mac
+.DS_Store
+
+# ignore dist folder
+dist/
