@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --inline --progress --config webpack.dev.config.js",
-    "build": "webpack -p --config webpack.config.production.js",
+    "build": "npm run clean && webpack -p --progress --config webpack.production.config.js",
     "clean": "rimraf ./build/*"
   },
   "repository": {
@@ -20,8 +20,7 @@
     "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.2.2",
-    "tachyons": "^4.8.1"
+    "react-router-dom": "^4.2.2"
   },
   "license": "MIT",
   "devDependencies": {
