@@ -14,7 +14,8 @@ class DataStore {
             getAll:         this.getAll,
             getAllPages:    this.getAllPages,
             getAllPosts:    this.getAllPosts,
-            getPageBySlug:  this.getPageBySlug
+            getPageBySlug:  this.getPageBySlug,
+            getAllClasses:  this.getAllClasses
         });
     }
 
@@ -24,26 +25,30 @@ class DataStore {
     }
 
     // returns all pages and posts
-    getAll() {
+    getAll () {
         return this.getState().data;
     }
 
     // returns all pages
-    getAllPages() {
+    getAllPages () {
         return this.getState().data.pages;
     }
 
     // returns all posts
-    getAllPosts() {
+    getAllPosts () {
         return this.getState().data.posts;
     }
 
     //returns page by slug
-    getPageBySlug(slug) {
+    getPageBySlug (slug) {
         const pages = this.getState().data.pages;
         return pages[Object.keys(pages).find((page, i) => {
             return pages[page].slug === slug;
         })] || {};
+    }
+
+    getAllClasses () {
+        return this.getState().data.classes;
     }
 }
 

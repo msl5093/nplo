@@ -7,6 +7,7 @@ class DataActions {
 
         this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // wp rest api pages
         this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // wp rest api posts
+        this.classesEndPoint = `${appUrl}/wp-json/wp/v2/classes`; //wp rest api custom post type => classes
     }
 
     // method for getting data from the provided endpoint url
@@ -37,6 +38,15 @@ class DataActions {
 
             this.getSuccess(payload); // pass returned data to the store
             cb(payload); // this callback will be used for dynamic route building
+        });
+
+        return true;
+    }
+
+    // method to get custom post type classes
+    getAllClasses(cb) {
+        this.api(this.pagesEndPoint).then((response) => {
+            this.getPosts(response, cb)
         });
 
         return true;

@@ -1,11 +1,12 @@
 import { render } from 'react-dom';
 import DataActions from 'flux/actions/DataActions.js';
 
-import Home from 'components/Home.js';
-import About from 'components/About.js';
-
-import Header from 'components/Header/Header.js';
 import Nav from 'components/Nav/Nav.js';
+import Header from 'components/Header/Header.js';
+import Home from 'components/Home/Home.js';
+import About from 'components/About/About.js';
+import Register from 'components/Register/Register.js';
+import Schedule from 'components/Schedule/Schedule.js';
 import Footer from 'components/Footer/Footer.js';
 
 // import tachyons globally
@@ -23,10 +24,12 @@ import {
 
 class AppInit {
     templates = {
-        'about': About
+        'about': About,
+        'register' : Register,
+        'schedule': Schedule
     }
 
-    buildRoutes(data) {
+    buildRoutes (data) {
         return data.pages.map((page, i) => {
             return(
                 <Route 
@@ -41,16 +44,16 @@ class AppInit {
 
     run() {
         DataActions.getPages((response) => {
-            render(
+            render (
                 <Router>
                     <div>
-                        <Nav />                        
+                        <Nav />  
+                        <Header />                      
                         <Switch>
                             <Route path="/" component={ Home } exact />
-                            {this.buildRoutes(response)}
-                            <Route render={() => { return <Redirect to="/" /> }} />
+                            { this.buildRoutes(response) }
+                            <Route render={ () => { return <Redirect to="/" /> } } />
                         </Switch>
-                        <Header />
                         <Footer />
                     </div>
                 </Router>, document.getElementById('app')

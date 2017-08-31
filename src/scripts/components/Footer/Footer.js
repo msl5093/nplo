@@ -4,7 +4,7 @@ import DataStore from 'flux/stores/DataStore.js';
 import './footer.css';
 
 class Footer extends React.Component {
-    render() {
+    render () {
         let allPages = DataStore.getAllPages();
         allPages = _.sortBy(allPages, [function(page) { return page.menu_order; }]);
 
@@ -20,7 +20,7 @@ class Footer extends React.Component {
                         <p className="f5 inconsolata"><a href="#" target="_blank" className="no-underline gray">Instagram</a></p>
                     </div>
                     <div>
-                        <p className="f6 moon-gray tc raleway">&copy;{year} | renee rudolph yoga, llc</p>
+                        <p className="f6 moon-gray tc raleway">&copy;{ year } | renee rudolph yoga, llc</p>
                     </div>
                 </div>
             </footer>
