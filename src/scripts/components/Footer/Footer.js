@@ -11,7 +11,7 @@ class Footer extends React.Component {
         let year = new Date().getFullYear();
 
         return (
-            <footer className="bg-black fixed bottom-0 w-100">
+            <footer className="bg-black w-100">
                 <div className="cf ph2-ns">
                     <div className="pa2 tracked">
                         <h2 className="f4-ns f3 moon-gray playfair tracked-tight">No Place Like Om Yoga</h2>

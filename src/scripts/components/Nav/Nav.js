@@ -26,7 +26,6 @@ class Nav extends React.Component {
         }
 
         let allPages = DataStore.getAllPages();
-        //allPages = _.sortBy(allPages, [function(page) { return page.title; }]);
 
         return (
             <nav className="tracked pa2 tr raleway bg-black">
@@ -46,6 +45,7 @@ class Nav extends React.Component {
                         )
                     }
                 }) }
+
             </nav>
         );
     }

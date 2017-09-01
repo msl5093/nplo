@@ -5,12 +5,12 @@ class DataStore {
     constructor() {
         this.data = {};
 
-        this.bindListeners({
+        this.bindListeners ({
             // listen to the getSuccess() in DataActions.js
             handleSuccess: DataActions.GET_SUCCESS
         });
 
-        this.exportPublicMethods({
+        this.exportPublicMethods ({
             getAll:         this.getAll,
             getAllPages:    this.getAllPages,
             getAllPosts:    this.getAllPosts,
@@ -20,7 +20,7 @@ class DataStore {
     }
 
     // store data returned by getSuccess() from DataActions.js
-    handleSuccess(data) {
+    handleSuccess (data) {
         this.setState({ data });
     }
 
@@ -47,6 +47,7 @@ class DataStore {
         })] || {};
     }
 
+    // returns all custom post type = classes
     getAllClasses () {
         return this.getState().data.classes;
     }
