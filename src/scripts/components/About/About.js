@@ -7,7 +7,7 @@ class About extends React.Component {
         let page = DataStore.getPageBySlug('about');
         
         return (
-            <div className="mw8 w-70-l w-80 center raleway pa2 mt4">
+            <div className="mw7 w-70-l w-70 center raleway pa2 mt4">
                 <h1>{ page.title.rendered } component</h1>
             </div>
         );

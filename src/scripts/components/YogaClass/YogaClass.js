@@ -1,5 +1,3 @@
-import Button from 'components/Button/Button.js';
-
 import './yogaClass.css';
 
 class YogaClass extends React.Component {
@@ -17,8 +15,8 @@ class YogaClass extends React.Component {
     render () {
         return (
             <div>
-                <p>{this.props.title}: {this.props.date} || {this.props.totalReg}/{this.props.maxReg}</p>
-                <Button />
+                <p className="fw7">{ this.props.title }: <span className="fw5">{ this.props.date }</span></p>
+                <p>{ this.props.totalReg }/{ this.props.maxReg }</p>
             </div>
         )
     }

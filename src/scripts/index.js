@@ -25,7 +25,7 @@ import {
 class AppInit {
     templates = {
         'about': About,
-        'register' : Register,
+        'register': Register,
         'schedule': Schedule
     }
 

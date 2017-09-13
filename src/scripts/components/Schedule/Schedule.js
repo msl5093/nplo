@@ -3,6 +3,7 @@ import ClassActions from 'flux/actions/ClassActions.js';
 import ClassStore from 'flux/stores/ClassStore.js';
 
 import YogaClass from 'components/YogaClass/YogaClass.js';
+import Button from 'components/Button/Button.js';
 
 import alt from 'flux/alt/alt.js';
 
@@ -12,11 +13,16 @@ class Schedule extends React.Component {
     constructor () {
         super();
         this.state = ClassStore.getState();
+
+        this.state = {
+            loading: "Loading..."
+        }
     }
 
     componentDidMount () {
         ClassStore.listen(this.storeChanged);
         ClassActions.read();
+        this.state.loading = "";
     }
 
     componentWillUnmount () {
@@ -28,20 +34,26 @@ class Schedule extends React.Component {
         this.setState(state);
     }
 
+    classReg() {
+        alert('signup for class');
+    }
+
     render () {
         let page = DataStore.getPageBySlug('schedule');
         let classes = this.state.classes;
         classes = _.sortBy(classes, [(c) => { return c.acf.date; }]);
         
         return (
-            <div className="mw8 w-70-l w-80 center raleway pa2 mt4">
+            <div className="mw7 w-70-l w-70 center raleway pa2 mt4">
                 <h1>{ page.title.rendered } component</h1>
                 
+                <h2>{ this.state.loading }</h2>
+
                 { classes.map((c) => {
-                    return ( 
-                        //<span className="fw7">{ c.title.rendered }:</span>{ c.acf.date } { c.acf.total_registration }/{ c.acf.max_registration }                                
-                        <div key={ c.id }>
-                            <YogaClass title={ c.title.rendered } date={ c.acf.date } totalReg={ c.acf.total_registration } maxReg={ c.acf.max_registration }/>
+                    return (                                 
+                        <div key={ c.id } className="pa2 mb2 outline">
+                            <YogaClass title={ c.title.rendered } date={ c.acf.date } totalReg={ c.acf.total_registration } maxReg={ c.acf.max_registration } />        
+                            <Button disabled={ c.acf.max_registration - c.acf.total_registration <= 0 } handleClick={ this.classReg } />
                         </div>
                     );
                 }) }

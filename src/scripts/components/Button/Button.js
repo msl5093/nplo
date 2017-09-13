@@ -5,13 +5,14 @@ class Button extends React.Component {
         super();
 
         this.state = {
-            disabled: false
+            disabled: false,
+            handleClick: null
         }
     }
 
     render () {
         return (
-            <button>Signup</button>
+            <button disabled={ this.props.disabled } onClick={ this.props.handleClick }>Signup</button>
         )
     }
 }
