@@ -27,13 +27,9 @@ class Home extends React.Component {
     }
 
     render () {
-        let page = DataStore.getPageBySlug ('home');
-        let posts = DataStore.getAllPosts();
-        let classes = this.state.classes;
-
         return (
             <div className="mw7 w-70-l w-70 center raleway pa2 mt4">
-                <h1>{ page.title.rendered } component</h1>
+                
             </div>
         );
     }
