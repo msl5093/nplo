@@ -10,50 +10,12 @@ import alt from 'flux/alt/alt.js';
 import './schedule.css';
 
 class Schedule extends React.Component {
-    constructor () {
-        super();
-        this.state = ClassStore.getState();
-
-        this.state = {
-            loading: "Loading..."
-        }
-    }
-
-    componentDidMount () {
-        ClassStore.listen(this.storeChanged);
-        ClassActions.read();
-        this.state.loading = "";
-    }
-
-    componentWillUnmount () {
-        ClassStore.unlisten(this.storeChanged);
-        alt.recycle(ClassStore);
-    }
-
-    storeChanged = (state) => {
-        this.setState(state);
-    }
-
-    classReg() {
-        
-    }
-
     render () {
-        let classes = this.state.classes;
-        classes = _.sortBy(classes, [(c) => { return c.acf.date; }]);
-        
         return (
-            <div className="mw7 w-70-l w-70 center raleway pa2 mt4">                
-                <h2>{ this.state.loading }</h2>
-
-                { classes.map((c) => {
-                    return (                                 
-                        <div key={ c.id } className="pa2 mb2 outline">
-                            <YogaClass title={ c.title.rendered } date={ c.acf.date } totalReg={ c.acf.total_registration } maxReg={ c.acf.max_registration } />        
-                        </div>
-                    );
-                }) }
-
+            <div className="mw8 w-80-l w-80 center raleway pa2 mt4">                
+                <div className="iframe-container">
+                    <iframe name="frame2" src="https://app.punchpass.com/org/4061/classes?embed=true" height="700" width="100%"></iframe> 
+                </div>
             </div>
         );
     }

@@ -25,7 +25,6 @@ import {
 class AppInit {
     templates = {
         'about': About,
-        'register': Register,
         'schedule': Schedule
     }
 
@@ -46,14 +45,15 @@ class AppInit {
         DataActions.getPages((response) => {
             render (
                 <Router>
-                    <div>
-                        <Nav />  
-                        <Header />                      
-                        <Switch>
-                            <Route path="/" component={ Home } exact />
-                            { this.buildRoutes(response) }
-                            <Route render={ () => { return <Redirect to="/" /> } } />
-                        </Switch>
+                    <div className="wrapper">
+                        <div className="content">
+                            <Nav />  
+                            <Switch>
+                                <Route path="/" component={ Schedule } exact />
+                                { this.buildRoutes(response) }
+                                <Route render={ () => { return <Redirect to="/" /> } } />
+                            </Switch>
+                        </div>
                         <Footer />
                     </div>
                 </Router>, document.getElementById('app')

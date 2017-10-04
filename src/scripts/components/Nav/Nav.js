@@ -30,7 +30,6 @@ class Nav extends React.Component {
         return (
             <nav className="tracked pa2 tr raleway bg-black">
                 <Link to="/" className="fl link moon-gray playfair tracked-tight f4 f3-ns nt1">NPLO</Link>
-                <Link to="/" className="link moon-gray">Home</Link>
 
                 { allPages.map((page) => {
                     if (page.slug != 'home') {
