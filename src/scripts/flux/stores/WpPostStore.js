@@ -12,7 +12,7 @@ class WpPostStore {
         let _this = this;
         const posts = this.posts;
 
-        $.get('https://www.noplacelikeom-pa.com')
+        $.get('https://www.noplacelikeom-pa.com/wp-json/wp/v2/posts')
             .then((response) => {
                 let allPosts = response.data;
                 _this.setState({

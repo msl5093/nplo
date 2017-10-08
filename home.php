@@ -20,5 +20,5 @@
     </head>
     <body>
         <div id="app"></div>
-        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/bundle.js?fe7ebfa96948a372365c"></script></body>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/bundle.js?192791b9f76f730ee414"></script></body>
 </html>
