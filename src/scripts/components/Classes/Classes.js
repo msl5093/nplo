@@ -7,29 +7,7 @@ import alt from 'flux/alt/alt.js';
 import './classes.css';
 
 class Classes extends React.Component {
-    constructor () {
-        super();
-        this.state = ClassStore.getState();
-    }
-
-    componentDidMount () {
-        ClassStore.listen(this.storeChanged);
-        ClassActions.read();
-    }
-
-    componentWillUnmount () {
-        ClassStore.unlisten(this.storeChanged);
-        alt.recycle(ClassStore);
-    }
-
-    storeChanged = (state) => {
-        this.setState(state);
-    }
-
     render () {
-        let classes = this.state.classes;
-        classes = _.sortBy(classes, [(c) => { return c.acf.name; }]);
-
         return (
             <div className="mw8 w-80-l w-80 center raleway pa2 mt3">   
                 <div className="mw8 w-80-l w-80 center pb3">
@@ -43,19 +21,24 @@ class Classes extends React.Component {
                     <p className="pb4 f6">
                         **Single class passes are simply a way to pay ahead of time when planning to attend a single class. Payment may always be provided prior to or after a class via credit card, cash, or personal check. Single class passes provide an easy way to purchase single classes online ahead of time.
                     </p>
-                                
-                { classes.map((c) => {
-                    return (                            
-                        <div key={ c.id }>
-                            <div className="mw7 w-70-l w-80 center pb3">
-                                <h2 className="playfair">{ c.acf.name }</h2>
-                                <p>{ c.acf.description }</p>
-                                <p>{ c.acf.price }</p>
-                            </div>
-                        </div>
-                    );
-                }) }
-                    
+
+                    <h2 className="playfair">Gentle Yoga</h2>
+                    <p>
+                        This class will use props and chairs to gently move into poses and will be focused on alignment and finding ease in each pose.
+                    </p>
+                    <p>$10.00</p>
+
+                    <h2 className="playfair">Vinyasa Flow Yoga</h2>
+                    <p>
+                        Vinyasa means to link breath with movement. This flow yoga will focus on flowing though poses with focus on both strengthening and lengthening. Any level.
+                    </p>
+                    <p>$10.00</p>
+
+                    <h2 className="playfair">Intro to Yoga</h2>
+                    <p>
+                    This class will focus on the fundamentals of yoga such as pose breakdowns, going through several variations of poses, and will offer alignment assistance. This class is not simply for beginners, but anyone who wishes to deepen their practice.
+                    </p>
+                    <p>$10.00</p>
                 </div>   
             </div>
         );
