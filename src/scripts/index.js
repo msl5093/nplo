@@ -7,6 +7,7 @@ import Home from 'components/Home/Home.js';
 import About from 'components/About/About.js';
 import Register from 'components/Register/Register.js';
 import Schedule from 'components/Schedule/Schedule.js';
+import Classes from 'components/Classes/Classes.js';
 import Footer from 'components/Footer/Footer.js';
 
 // import tachyons globally
@@ -25,7 +26,8 @@ import {
 class AppInit {
     templates = {
         'about': About,
-        'schedule': Schedule
+        'schedule': Schedule,
+        'classes': Classes
     }
 
     buildRoutes (data) {

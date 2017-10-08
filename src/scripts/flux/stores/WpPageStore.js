@@ -12,7 +12,7 @@ class WpPageStore {
         let _this = this;
         const pages = this.pages;
 
-        $.get('https://www.noplacelikeom-pa.com/wp-json/wp/v2/pages')
+        $.get('http://localhost/Zym/wp-json/wp/v2/pages')
             .then((response) => {
                 let allPages = response.data;
                 _this.setState({

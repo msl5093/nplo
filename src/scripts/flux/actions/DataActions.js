@@ -3,7 +3,7 @@ import alt from 'flux/alt/alt.js';
 
 class DataActions {
     constructor () {
-        const appUrl = 'https://www.noplacelikeom-pa.com'; // wp base url
+        const appUrl = 'http://localhost/Zym'; // wp base url
 
         this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // wp rest api pages
         this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // wp rest api posts
