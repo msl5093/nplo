@@ -4,13 +4,28 @@ html, body {
   height: 100%;
 }
 
-.wrapper {
-  min-height: 100%;
-  position: relative;
+.nploTeal {
+  color: rgb(4, 132, 155);
 }
 
-.content {
-  padding-bottom: 10em;
+.bg-nploTeal {
+  background: rgb(4, 132, 155);
+}
+
+.nploLtBlue {
+  color: rgb(142, 183, 210);
+}
+
+.bg-nploLtBlue {
+  background: rgb(142, 183, 210);
+}
+
+.nploBrown {
+  color: rgb(145, 129, 118);
+}
+
+.bg-nploBrown {
+  background: rgb(145, 129, 118);
 }
 
 .raleway {
@@ -23,6 +38,10 @@ html, body {
 
 .inconsolata {
     font-family: "Inconsolata", monospace;
+}
+
+.scriptoramaJf {
+  font-family: "ScriptoramaJFHostess";
 }
 
 .loader:empty,
@@ -68,4 +87,9 @@ html, body {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: "ScriptoramaJFHostess";
+  src: url("assets/Scriptorama Hostess JF Regular.ttf");
 }

@@ -28,24 +28,26 @@ class Nav extends React.Component {
         let allPages = DataStore.getAllPages();
 
         return (
-            <nav className="tracked pa2 tr raleway bg-black">
-                <Link to="/" className="fl link moon-gray playfair tracked-tight f4 f3-ns nt1">NPLO</Link>
+            <div className="w-100">
+                <nav className="w-100 tracked pa2 tr raleway bg-dark-gray">
+                    <Link to="/" className="fl link moon-gray scriptoramaJf f4 f3-ns nt1 pb2">No Place Like Om</Link>
 
-                { allPages.map((page) => {
-                    if (page.slug != 'home') {
-                        return (
-                            <Link
-                                className="pl2 link moon-gray"
-                                key = { page.id }
-                                to = { `/${page.slug}` }
-                            >
-                                { page.title.rendered }
-                            </Link>
-                        )
-                    }
-                }) }
+                    { allPages.map((page) => {
+                        if (page.slug != 'home') {
+                            return (
+                                <Link
+                                    className="f5 link moon-gray pr3"
+                                    key = { page.id }
+                                    to = { `/${page.slug}` }
+                                >
+                                    { page.title.rendered }
+                                </Link>
+                            )
+                        }
+                    }) }
 
-            </nav>
+                </nav>
+            </div>
         );
     }
 }

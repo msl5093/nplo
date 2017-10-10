@@ -12,7 +12,7 @@ class ClassStore {
         let _this = this;
         const classes = this.classes;
 
-        $.get('https://www.noplacelikeom-pa.com')
+        $.get('http://localhost/Zym/wp-json/wp/v2/classes')
             .then((response) => {
                 let allClasses = response.data;
                 _this.setState({
