@@ -1,0 +1,12 @@
+button {
+    border-color: transparent;
+    cursor: pointer;
+    transition: all 0.33333s ease-in-out;
+}
+
+button:focus,
+button:hover {
+    background: #fff;
+    color: #333;
+    border-color: #333;
+}

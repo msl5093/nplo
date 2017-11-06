@@ -44,6 +44,10 @@ html, body {
   font-family: "ScriptoramaJFHostess";
 }
 
+.yellowtail {
+  font-family: "Yellowtail", serif;
+}
+
 .loader:empty,
 .loader:empty:after {
     border-radius: 50%;

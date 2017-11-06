@@ -26,14 +26,15 @@ class Nav extends React.Component {
         }
 
         let allPages = DataStore.getAllPages();
+        allPages = _.sortBy(allPages, [(p) => { return p.title.rendered }])
 
         return (
             <div className="w-100">
                 <nav className="w-100 tracked pa2 tr raleway bg-dark-gray">
-                    <Link to="/" className="fl link moon-gray scriptoramaJf f4 f3-ns nt1 pb2">No Place Like Om</Link>
+                    <Link to="/" className="fl link moon-gray yellowtail f4 f3-ns nt1 pb2">No Place Like Om</Link>
 
                     { allPages.map((page) => {
-                        if (page.slug != 'home') {
+                        if (page.slug != 'welcome') {
                             return (
                                 <Link
                                     className="f5 link moon-gray pr3"

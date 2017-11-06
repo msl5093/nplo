@@ -1,18 +1,13 @@
 import './button.css';
 
 class Button extends React.Component {
-    constructor () {
-        super();
-
-        this.state = {
-            disabled: false,
-            handleClick: null
-        }
+    constructor (props) {
+        super(props);   
     }
 
     render () {
         return (
-            <button disabled={ this.props.disabled } onClick={ this.props.handleClick }>Signup</button>
+            <button className="white bg-dark-gray pa1" type={ this.props.type } onClick={ this.props.handleClick }>{ this.props.text }</button>
         )
     }
 }

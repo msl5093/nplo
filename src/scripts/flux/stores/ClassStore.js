@@ -17,7 +17,7 @@ class ClassStore {
                 let allClasses = response.data;
                 _this.setState({
                     classes : classes.concat(allClasses)
-                })
+                });
             });
     }
 }

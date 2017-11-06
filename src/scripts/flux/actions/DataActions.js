@@ -7,7 +7,6 @@ class DataActions {
 
         this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // wp rest api pages
         this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // wp rest api posts
-        this.classesEndPoint = `${appUrl}/wp-json/wp/v2/classes`; //wp rest api custom post type => classes
     }
 
     // method for getting data from the provided endpoint url
@@ -24,7 +23,7 @@ class DataActions {
     // method for getting wp pages data
     getPages (cb) {
         this.api(this.pagesEndPoint).then((response) => {
-            this.getPosts(response, cb)
+            this.getPosts(response, cb);
         });
 
         return true;
@@ -42,14 +41,6 @@ class DataActions {
 
         return true;
     }
-
-    // method for getting custom post type classes
-    getClasses () {
-	    this.api(this.classesEndPoint).then((response) => {
-            this.getSuccess (response);
-            cb (payload);
-        });
-	}
 
     // this returns an object with pages and posts data together
     // the alt store will listen for this method to fire and will store the returned data

@@ -1,9 +1,9 @@
 import alt from 'flux/alt/alt.js';
 
-class WpPostActions {
+class PassActions {
     constructor () {
         this.generateActions('read');
     }
 }
 
-export default alt.createActions(WpPostActions);
+export default alt.createActions(PassActions);

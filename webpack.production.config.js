@@ -118,17 +118,17 @@ module.exports = {
 			_: 'lodash'
 		}),
 
-	    new HtmlWebpackPlugin({
-	        filename: 'index.html',
-	        template: './src/index.html',
-	        hash: true
-	    }),
+		new HtmlWebpackPlugin({
+				filename: 'index.html',
+				template: './src/index.html',
+				hash: true
+		}),
 
-	    new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            sourceMap: true
-        }),
+		new webpack.optimize.UglifyJsPlugin({
+					compress: {
+							warnings: false
+					},
+					sourceMap: true
+			}),
 	]
 }

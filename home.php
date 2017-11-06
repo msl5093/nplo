@@ -15,10 +15,11 @@
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Yellowtail" rel="stylesheet">
 
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />	
     </head>
     <body>
         <div id="app"></div>
-        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/bundle.js?192791b9f76f730ee414"></script></body>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/build/bundle.js?dc8b5c92c9d99180bc8e"></script></body>
 </html>

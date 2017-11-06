@@ -15,7 +15,7 @@ class DataStore {
             getAllPages:    this.getAllPages,
             getAllPosts:    this.getAllPosts,
             getPageBySlug:  this.getPageBySlug,
-            getAllClasses:  this.getAllClasses
+            getPostBySlug:  this.getPostBySlug
         });
     }
 
@@ -39,7 +39,7 @@ class DataStore {
         return this.getState().data.posts;
     }
 
-    //returns page by slug
+    // returns page by slug
     getPageBySlug (slug) {
         const pages = this.getState().data.pages;
         return pages[Object.keys(pages).find((page, i) => {
@@ -47,9 +47,12 @@ class DataStore {
         })] || {};
     }
 
-    // returns all custom post type = classes
-    getAllClasses () {
-        return this.getState().data.classes;
+    // returns post by slug
+    getPostBySlug (slug) {
+        const posts = this.getState().data.posts;
+        return posts[Object.keys(posts).find((post, i) => {
+            return posts[post].slug === slug;
+        })] || {};
     }
 }
 

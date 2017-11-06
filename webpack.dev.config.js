@@ -122,10 +122,10 @@ module.exports = {
 			_: 'lodash'
 		}),
 
-	    new HtmlWebpackPlugin({
-	        filename: 'index.html',
-	        template: './src/index.html',
-	        hash: false
-	    })
+		new HtmlWebpackPlugin({
+				filename: 'index.html',
+				template: './src/index.html',
+				hash: false
+		})
 	]
 }

@@ -3,12 +3,12 @@ import DataActions from 'flux/actions/DataActions.js';
 
 import Nav from 'components/Nav/Nav.js';
 import Header from 'components/Header/Header.js';
-import Home from 'components/Home/Home.js';
+import Welcome from 'components/Welcome/Welcome.js';
 import About from 'components/About/About.js';
-import Register from 'components/Register/Register.js';
 import Schedule from 'components/Schedule/Schedule.js';
 import Classes from 'components/Classes/Classes.js';
 import Faq from 'components/Faq/Faq.js';
+import Passes from 'components/Passes/Passes.js';
 import Footer from 'components/Footer/Footer.js';
 
 // import tachyons globally
@@ -29,7 +29,8 @@ class AppInit {
         'about': About,
         'schedule': Schedule,
         'classes': Classes,
-        'faq': Faq
+        'faq': Faq,
+        'passes': Passes
     }
 
     buildRoutes (data) {
@@ -54,7 +55,7 @@ class AppInit {
                             <Nav />  
                             <Header />
                             <Switch>
-                                <Route path="/" component={ Schedule } exact />
+                                <Route path="/" component={ Welcome } exact />
                                 { this.buildRoutes(response) }
                                 <Route render={ () => { return <Redirect to="/" /> } } />
                             </Switch>

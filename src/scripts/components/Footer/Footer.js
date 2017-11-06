@@ -14,7 +14,7 @@ class Footer extends React.Component {
             <footer className="bg-dark-gray w-100 mt6">
                 <div className="mw9 w-90-l w-90-ns center pt3">
                     <div id="footer-contact">
-                        <h2 className="f4 moon-gray tc scriptoramaJf fw4 pb3">
+                        <h2 className="f4 moon-gray tc yellowtail fw4 pb3">
                             No Place Like Om
                         </h2>
                         <p className="f6 moon-gray tc raleway nt3">
